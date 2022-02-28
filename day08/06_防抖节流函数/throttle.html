@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button id="cancel">取消</button>
+    <!-- 1.利用工具库 -->
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script> -->
+
+    <!-- 2.自己实现的函数 -->
+
+    <!-- <script src="./06_throttle-v1-基本实现.js"></script> -->
+
+    <script src="./07_throttle-v2-leading实现.js"></script>
+    <script>
+      const inputEl = document.querySelector("input");
+
+      let counter = 0;
+      const inputChange = function (event) {
+        console.log(`发送了第${++counter}次网络请求`, this, event);
+
+        return "tests teste";
+      };
+
+      //  利用工具库的节流处理
+      // inputEl.oninput = _.throttle(inputChange, 1000);
+
+      // 1.自己实现的节流函数v1版本
+      // inputEl.oninput = throttle(inputChange, 1000);
+
+      // 2.自己实现的节流函数v2版本
+      inputEl.oninput = throttle(inputChange, 1000, { leading: false });
+    </script>
+  </body>
+</html>
