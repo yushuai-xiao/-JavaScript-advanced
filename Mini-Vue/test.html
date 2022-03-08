@@ -6,7 +6,10 @@
 	</head>
 	<body>
 		<div id="app">
-			<input type="text" v-model="text" /> {{text}}
+			<input type="text" v-model="text1" /> {{ text1 }}
+      <br />
+      <br />
+      <input type="text" v-model="text2" /> {{ text2 }}
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -34,7 +37,7 @@
 				if(reg.test(node.nodeValue)) {
 					var name = RegExp.$1; //获取到匹配的字符串
 					name = name.trim();
-          //	node.nodeValue = vm[name]; //将data中的值赋予给该node
+          // node.nodeValue = vm[name]; //将data中的值赋予给该node
 					new Watcher(vm, node, name) //绑定一个订阅者
 				}
 			}
@@ -52,7 +55,7 @@
 			return fragment
 		}
 
-		//	Watcher监听者
+		//	Watcher监听者                              --（007）--
 		function Watcher(vm, node, name) {
 			Dep.target = this;
 			this.vm = vm;
@@ -132,7 +135,8 @@
 		var vm = new Vue({
 			el: 'app',
 			data: {
-				text: 'this is a demo'
+				text1: 'this is text1',
+				text2: 'this is text2',
 			}
 		})
 
