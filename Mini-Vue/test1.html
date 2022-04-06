@@ -43,7 +43,6 @@
         var fragment = document.createDocumentFragment();
         var child
         while(child = node.firstChild){
-          console.log(child);
           compile(child,vm)
           fragment.appendChild(child)
         }
@@ -117,12 +116,13 @@
        this.data = options.data
        observe(this.data,this)
        var id = options.el
+       //dom块  
        var dom = nodeToFragment(document.getElementById(id),this)
-       console.log(dom);
        //处理完所有节点后，重新把内容添加回去
        document.getElementById(id).appendChild(dom)  
      }
       
+
     // minivue实例
     var vm = new Vue({
       el:"app",

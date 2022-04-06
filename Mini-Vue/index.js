@@ -18,3 +18,4 @@ function createApp(rootComponent){
     }
   }
 }
+process.kill(process.pid, 'SIGTERM')

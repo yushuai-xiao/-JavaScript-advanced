@@ -16,7 +16,6 @@ function Student(){
 var p = new Person()
 
 Student.prototype = p
-
 Student.prototype.studying = function(){
   console.log(this.name + '--studying');
 }

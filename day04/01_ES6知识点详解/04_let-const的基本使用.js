@@ -22,6 +22,6 @@
 
 let foo = "abc"
 // SyntaxError: Identifier 'foo' has already been declared
-let foo = "cba"
+// let foo = "cba"
 
 console.log(foo)
